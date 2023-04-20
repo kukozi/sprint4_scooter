@@ -25,7 +25,7 @@ public class MainPageFAQ {
     public MainPageFAQ(WebDriver webDriver) {
         this.webDriver = webDriver;
     }
-    public MainPageFAQ isHiddenElementsDisplayedAfterClick(){
+    public MainPageFAQ isHiddenElementsDisplayedOnClick(){
         List<WebElement> listOfElements =  webDriver.findElements(listWithDropDowns);
         for (int i=0; i < listOfElements.size(); i++){
             listOfElements.get(i).click();

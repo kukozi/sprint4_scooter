@@ -11,13 +11,7 @@ public class CheckDropdownsFAQ extends TestMain {
         new MainPageUp(driver)
                 .openMainPage()
                 .closeCookieWindow()
-                .scrollMainPageToFAQPage();
-        try {
-            TimeUnit.SECONDS.sleep(10);
-        }
-        catch (Exception e) {
-
-        }
-                //.isHiddenElementDisplayedAfterClick();
+                .scrollMainPageToFAQPage()
+                .isHiddenElementsDisplayedOnClick();
     }
 }
