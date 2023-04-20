@@ -3,6 +3,8 @@ package ru.yandex.praktikum.site_model;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import java.util.List;
 public class OrderRentPage {
@@ -11,7 +13,7 @@ public class OrderRentPage {
     // Web elements
     // Second order section "Про аренду"
     // Header "Про аренду"
-    private By headerAboutRent = By.className("Order_Header__BZXOb");
+    private By headerAboutRent = By.xpath("//div[text() = 'Про аренду']");
     // Delivery date selector (datepicker)
     private By scooterRentalDate =By.xpath("//div[@class='react-datepicker__input-container']/input");
     // Rent duration field (dropdown)
@@ -54,6 +56,11 @@ public class OrderRentPage {
 
     public OrderRentPage setCourierComment(String comment){
         webDriver.findElement(courierComment).sendKeys(comment);
+        return this;
+    }
+    public OrderRentPage waitForLoadHeader(){
+        new WebDriverWait(webDriver, 3)
+                .until(ExpectedConditions.visibilityOfElementLocated(headerAboutRent));
         return this;
     }
     public OrderRentPage fillInOrderRentInfo(String rentDate, int period, int colorNumber, String comment){

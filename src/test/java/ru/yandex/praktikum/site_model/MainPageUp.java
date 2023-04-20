@@ -5,6 +5,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.JavascriptExecutor;
+import ru.yandex.praktikum.CheckTrack;
 
 import java.util.Iterator;
 import java.util.Set;
@@ -16,7 +17,7 @@ public class MainPageUp {
     // Top "Заказать" button
     private By topOrderButton = By.className("Button_Button__ra12g");
     // Lower "Заказать" button
-    private By lowerOrderButton = By.className("Button_Button__ra12g Button_Middle__1CSJM");
+    private By lowerOrderButton = By.xpath("//button[@class = 'Button_Button__ra12g Button_Middle__1CSJM']");
     // Cookies window's "да все привыкли" button
     private By closeCookiesWindow = By.className("App_CookieButton__3cvqF");
     // "Самокат" logo
@@ -26,7 +27,11 @@ public class MainPageUp {
     // Dropdowns with FAQs
     private By listOfFAQs = By.xpath("//div[@class='Home_FAQ__3uVm4']/div/*");
     // Track order button "Статус заказа"
-
+    private By findTrackButton = By.className("Header_Link__1TAG7");
+    // Track order field
+    private By trackInputField = By.xpath("//input[@class = 'Input_Input__1iN_Z Header_Input__xIoUq']");
+    // Find order by track button
+    private By goTrackButton = By.xpath("//button[@class = 'Button_Button__ra12g Header_Button__28dPO']");
     // Class constructor
     public MainPageUp(WebDriver webDriver){
         this.webDriver = webDriver;
@@ -51,6 +56,7 @@ public class MainPageUp {
     // Click on Yandex logo and follow to dzen.ru
     public void clickYandexLogo() {
         String correctUrl = "https://dzen.ru/?yredirect=true";
+        webDriver.findElement(yandexLogo).click();
         String mainWindowHandle = webDriver.getWindowHandle();
         Set<String> setOfChildWindow = webDriver.getWindowHandles();
         Iterator<String> itr = setOfChildWindow.iterator();
@@ -79,5 +85,17 @@ public class MainPageUp {
     public OrderContactPage clickLowerOrderButton(){
         webDriver.findElement(lowerOrderButton).click();
         return new OrderContactPage(webDriver);
+    }
+    public MainPageUp clickFindTrack() {
+        webDriver.findElement(findTrackButton).click();
+        return this;
+    }
+    public MainPageUp fillInTrackNumber(String trackNumber) {
+        webDriver.findElement(trackInputField).sendKeys(trackNumber);
+        return this;
+    }
+    public TrackPage clickGoTrack() {
+        webDriver.findElement(goTrackButton).click();
+        return new TrackPage(webDriver);
     }
 }

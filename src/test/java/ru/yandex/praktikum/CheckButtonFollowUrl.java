@@ -5,13 +5,13 @@ import ru.yandex.praktikum.site_model.MainPageUp;
 public class CheckButtonFollowUrl extends TestMain{
     @Test
     public void checkScooterUrl(){
-        new MainPageUp(driver)
+        new MainPageUp(webDriver)
                 .openMainPage()
                 .clickScooterLogo();
     }
     @Test
     public void checkYandexUrl(){
-        new MainPageUp(driver)
+        new MainPageUp(webDriver)
                 .openMainPage()
                 .clickYandexLogo();
     }

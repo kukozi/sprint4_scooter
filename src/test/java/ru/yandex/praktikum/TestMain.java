@@ -8,17 +8,17 @@ import org.openqa.selenium.chrome.ChromeOptions;
 
 import java.util.concurrent.TimeUnit;
 public abstract class TestMain {
-    WebDriver driver;
+    WebDriver webDriver;
 
     @Before
     public void setUp(){
         ChromeOptions options = new ChromeOptions();
-        driver = new ChromeDriver(options);
-        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+        webDriver = new ChromeDriver(options);
+        webDriver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
     }
 
     @After
     public void tearDown(){
-        driver.quit();
+        webDriver.quit();
     }
 }

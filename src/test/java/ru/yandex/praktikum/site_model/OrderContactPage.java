@@ -2,6 +2,8 @@ package ru.yandex.praktikum.site_model;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class OrderContactPage {
     // WebDriver init
@@ -9,7 +11,7 @@ public class OrderContactPage {
     // Web elements
     // First order section "Для кого самокат"
     // Header "Для кого самокат"
-    private By headerAboutRent = By.className("Order_Header__BZXOb");
+    private By headerAboutRent = By.xpath("//div[text() = 'Для кого самокат']");
     // Name input
     private By nameInputField = By.xpath("//div[@class='Order_Form__17u6u']/div[1]/input");
     // Surname input
@@ -28,7 +30,6 @@ public class OrderContactPage {
         this.webDriver = webDriver;
     }
     // Test methods
-    //
     public OrderContactPage setName(String name){
         webDriver.findElement(nameInputField).sendKeys(name);
         return this;
@@ -54,10 +55,10 @@ public class OrderContactPage {
         webDriver.findElement(phoneNumberInputField).sendKeys(number);
         return this;
     }
-
-    public OrderRentPage clickOnNextButton(){
-        webDriver.findElement(nextButton).click();
-        return new OrderRentPage(webDriver);
+    public OrderContactPage waitForLoadHeader(){
+        new WebDriverWait(webDriver, 3)
+                .until(ExpectedConditions.visibilityOfElementLocated(headerAboutRent));
+        return this;
     }
     // Fill first order section with contact info
     public OrderContactPage fillInOrderContactInfo(String name, String surname,
@@ -68,5 +69,9 @@ public class OrderContactPage {
         setMetroStation(metroStation);
         setPhoneNumber(number);
         return this;
+    }
+    public OrderRentPage clickOnNextButton(){
+        webDriver.findElement(nextButton).click();
+        return new OrderRentPage(webDriver);
     }
 }

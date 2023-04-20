@@ -8,10 +8,10 @@ import java.util.concurrent.TimeUnit;
 public class CheckDropdownsFAQ extends TestMain {
     @Test
     public void checkMainPage(){
-        new MainPageUp(driver)
+        new MainPageUp(webDriver)
                 .openMainPage()
                 .closeCookieWindow()
                 .scrollMainPageToFAQPage();
-        new MainPageFAQ(driver).isHiddenElementsDisplayedOnClick();
+        new MainPageFAQ(webDriver).isHiddenElementsDisplayedOnClick();
     }
 }

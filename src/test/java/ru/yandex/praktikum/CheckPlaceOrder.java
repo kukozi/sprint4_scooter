@@ -51,9 +51,10 @@ public class CheckPlaceOrder extends TestMain {
 
     @Test
     public void scooterOrderCheckWithTopButton(){
-        new MainPageUp(driver)
+        new MainPageUp(webDriver)
                 .openMainPage()
                 .clickTopOrderButton()
+                .waitForLoadHeader()
                 .fillInOrderContactInfo(nameInput, surnameInput, addressInput, metroStation, numberInput)
                 .clickOnNextButton()
                 .fillInOrderRentInfo(rentDate, rentPeriod, colorSelect, comment)
@@ -63,7 +64,7 @@ public class CheckPlaceOrder extends TestMain {
 
     @Test
     public void scooterOrderCheckWithLowerButton(){
-        new MainPageUp(driver)
+        new MainPageUp(webDriver)
                 .openMainPage()
                 .scrollMainPageToFAQPage()
                 .clickLowerOrderButton()
