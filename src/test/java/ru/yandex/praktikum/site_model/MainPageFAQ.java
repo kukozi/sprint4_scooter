@@ -32,7 +32,7 @@ public class MainPageFAQ {
             boolean isDisplayed = webDriver.findElement(listOfFAQs.get(i)).isDisplayed();
             new WebDriverWait(webDriver, 3)
                     .until(ExpectedConditions.visibilityOf(webDriver.findElement(listOfFAQs.get(i))));
-        };
+        }
         return this;
     }
 }
