@@ -16,12 +16,12 @@ public class OrderContactPage {
     private By surnameInputField = By.xpath("//div[@class='Order_Form__17u6u']/div[2]/input");
     // Address input
     private By addressInputField = By.xpath("//div[@class='Order_Form__17u6u']/div[3]/input");
-    // Phone number input
-    private By phoneNumberInputField = By.xpath("//div[@class='Order_Form__17u6u']/div[5]/input");
     // Metro station field
     private By metroStationField = By.className("select-search__input");
     // Metro station dropdown selector
     private By metroStationSelector = By.className("select-search__select/*");
+    // Phone number input
+    private By phoneNumberInputField = By.xpath("//div[@class='Order_Form__17u6u']/div[5]/input");
     // "Далее" button
     private final By nextButton = By.xpath("//div[@class='Order_NextButton__1_rCA']/button");
     public OrderContactPage(WebDriver webDriver){
@@ -55,9 +55,9 @@ public class OrderContactPage {
         return this;
     }
 
-    public OrderContactPage clickOnNextButton(){
+    public OrderRentPage clickOnNextButton(){
         webDriver.findElement(nextButton).click();
-        return this;
+        return new OrderRentPage(webDriver);
     }
     // Fill first order section with contact info
     public OrderContactPage fillInOrderContactInfo(String name, String surname,

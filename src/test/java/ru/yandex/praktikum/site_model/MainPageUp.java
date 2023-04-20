@@ -43,10 +43,10 @@ public class MainPageUp {
         return this;
     }
     // Scroll to the bottom of the main page
-    public MainPageFAQ scrollMainPageToFAQPage() {
+    public MainPageUp scrollMainPageToFAQPage() {
         WebElement element = webDriver.findElement(listOfFAQs);
         ((JavascriptExecutor) webDriver).executeScript("arguments[0].scrollIntoView();", element);
-        return new MainPageFAQ(webDriver);
+        return new MainPageUp(webDriver);
     }
     // Click on Yandex logo and follow to dzen.ru
     public void clickYandexLogo() {

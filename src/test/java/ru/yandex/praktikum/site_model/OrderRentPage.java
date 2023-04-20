@@ -56,11 +56,19 @@ public class OrderRentPage {
         webDriver.findElement(courierComment).sendKeys(comment);
         return this;
     }
-    public OrderRentPage fillOutTheRentalForm(String rentDate, int period, int colorNumber, String comment){
+    public OrderRentPage fillInOrderRentInfo(String rentDate, int period, int colorNumber, String comment){
         setDateOfRent(rentDate);
         setRentalPeriod(period);
         setScooterColor(colorNumber);
         setCourierComment(comment);
+        return this;
+    }
+    public OrderRentPage clickOrderButton() {
+        webDriver.findElement(orderButton).click();
+        return this;
+    }
+    public OrderRentPage clickYesButton() {
+        webDriver.findElement(yesButton).click();
         return this;
     }
 }
