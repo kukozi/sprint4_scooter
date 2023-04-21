@@ -78,7 +78,7 @@ public class MainPageUp {
     }
     // Click top order "Заказать" button
     public OrderContactPage clickTopOrderButton() {
-        webDriver.findElement(lowerOrderButton).click();
+        webDriver.findElement(topOrderButton).click();
         return new OrderContactPage(webDriver);
     }
     // Click lower order "Заказать" button
