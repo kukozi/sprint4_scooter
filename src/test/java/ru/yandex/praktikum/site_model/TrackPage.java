@@ -16,7 +16,7 @@ public class TrackPage {
     // Order Not Found board
     private By notFoundBoard = By.className("Track_NotFound__6oaoY");
     // List with order details
-    private By orderInfoList = By.className("Track_OrderInfo__2fpDL");
+    private By orderInfoList = By.className("Track_OrderColumns__2r_1F");
     List<By> listOfLocator = Arrays.asList(By.xpath("//div[@class = 'Track_OrderInfo__2fpDL']/div[1]/div[2]"), // name
             By.xpath("//div[@class = 'Track_OrderInfo__2fpDL']/div[2]/div[2]"),     // surname
             By.xpath("//div[@class = 'Track_OrderInfo__2fpDL']/div[3]/div[2]"),     // address
@@ -42,8 +42,10 @@ public class TrackPage {
     }
     // Test methods
     public void checkOrderIsActive(Boolean isFound){
-        Boolean board = !(webDriver.findElement(notFoundBoard).isDisplayed());
-        Boolean table =  webDriver.findElement(orderInfoList).isDisplayed();
+        // Check whether Not Found message is displayed
+        Boolean board = !(webDriver.findElements(notFoundBoard).isEmpty());
+        // Check whether Order Info table is displayed
+        Boolean table =  !(webDriver.findElements(orderInfoList).isEmpty());
         Boolean isNotFoundVisible = board && table;
 
         Assert.assertEquals(isFound, isNotFoundVisible);
