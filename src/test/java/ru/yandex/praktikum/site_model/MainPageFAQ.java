@@ -25,6 +25,7 @@ public class MainPageFAQ {
     public MainPageFAQ(WebDriver webDriver) {
         this.webDriver = webDriver;
     }
+    // Cycle through FAQs dropdowns
     public MainPageFAQ isHiddenElementsDisplayedOnClick(){
         List<WebElement> listOfElements =  webDriver.findElements(listWithDropDowns);
         for (int i=0; i < listOfElements.size(); i++){

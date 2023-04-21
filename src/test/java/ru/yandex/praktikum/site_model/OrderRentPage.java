@@ -40,29 +40,31 @@ public class OrderRentPage {
         webDriver.findElement(headerAboutRent).click();
         return this;
     }
-
+    // Set rental period
     public OrderRentPage setRentalPeriod(int period){
         webDriver.findElement(rentalPeriod).click();
         List<WebElement> listOfElements = webDriver.findElements(rentalPeriodChoice);
         listOfElements.get(period).click();
         return this;
     }
-
+    // Set scooter color for the order
     public OrderRentPage setScooterColor(int colorNumber){
         List<WebElement> listOfColor = webDriver.findElements(colorCheckboxSelector);
         listOfColor.get(colorNumber).click();
         return this;
     }
-
+    // Add comment to the order info
     public OrderRentPage setCourierComment(String comment){
         webDriver.findElement(courierComment).sendKeys(comment);
         return this;
     }
+    // Wait for the Place Order page to be opened
     public OrderRentPage waitForLoadHeader(){
         new WebDriverWait(webDriver, 3)
                 .until(ExpectedConditions.visibilityOfElementLocated(headerAboutRent));
         return this;
     }
+    // Fill info fields in Rent Info section
     public OrderRentPage fillInOrderRentInfo(String rentDate, int period, int colorNumber, String comment){
         setDateOfRent(rentDate);
         setRentalPeriod(period);
