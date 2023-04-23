@@ -17,7 +17,7 @@ public class TrackPage {
     private By notFoundBoard = By.className("Track_NotFound__6oaoY");
     // List with order details
     private By orderInfoList = By.className("Track_OrderColumns__2r_1F");
-    List<By> listOfLocator = Arrays.asList(By.xpath("//div[@class = 'Track_OrderInfo__2fpDL']/div[1]/div[2]"), // name
+    private List<By> listOfLocator = Arrays.asList(By.xpath("//div[@class = 'Track_OrderInfo__2fpDL']/div[1]/div[2]"), // name
             By.xpath("//div[@class = 'Track_OrderInfo__2fpDL']/div[2]/div[2]"),     // surname
             By.xpath("//div[@class = 'Track_OrderInfo__2fpDL']/div[3]/div[2]"),     // address
             By.xpath("//div[@class = 'Track_OrderInfo__2fpDL']/div[4]/div[2]"),     // metro station
