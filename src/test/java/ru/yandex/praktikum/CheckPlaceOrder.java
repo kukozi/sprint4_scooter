@@ -18,14 +18,14 @@ public class CheckPlaceOrder extends TestMain {
     private final String comment;
 
     public CheckPlaceOrder(String nameInput,
-                            String surnameInput,
-                            String addressInput,
-                            String metroStation,
-                            String numberInput,
-                            String rentDate,
-                            int rentPeriod,
-                            int colorSelect,
-                            String comment) {
+                           String surnameInput,
+                           String addressInput,
+                           String metroStation,
+                           String numberInput,
+                           String rentDate,
+                           int rentPeriod,
+                           int colorSelect,
+                           String comment) {
         this.nameInput = nameInput;
         this.surnameInput = surnameInput;
         this.addressInput = addressInput;
@@ -37,7 +37,7 @@ public class CheckPlaceOrder extends TestMain {
         this.comment = comment;
     }
 
-    @Parameterized.Parameters (name = "Детали заказа. Тестовые данные: {0} {1} {2}")
+    @Parameterized.Parameters(name = "Детали заказа. Тестовые данные: {0} {1} {2}")
     public static Object[][] getUserData() {
         return new Object[][]{
                 {"Горячев", "Михаил", "Сущёвский вал, д.13 1", "Савёловская", "+79999999999",
@@ -50,7 +50,7 @@ public class CheckPlaceOrder extends TestMain {
     }
 
     @Test
-    public void scooterOrderCheckWithTopButton(){
+    public void scooterOrderCheckWithTopButton() {
         new MainPageUp(webDriver)
                 .openMainPage()
                 .clickTopOrderButton()
@@ -63,7 +63,7 @@ public class CheckPlaceOrder extends TestMain {
     }
 
     @Test
-    public void scooterOrderCheckWithLowerButton(){
+    public void scooterOrderCheckWithLowerButton() {
         new MainPageUp(webDriver)
                 .openMainPage()
                 .scrollMainPageToFAQPage()

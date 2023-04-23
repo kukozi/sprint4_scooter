@@ -22,13 +22,15 @@ public class MainPageFAQ {
             By.id("accordion__panel-5"),
             By.id("accordion__panel-6"),
             By.id("accordion__panel-7"));
+
     public MainPageFAQ(WebDriver webDriver) {
         this.webDriver = webDriver;
     }
+
     // Cycle through FAQs dropdowns
-    public MainPageFAQ isHiddenElementsDisplayedOnClick(){
-        List<WebElement> listOfElements =  webDriver.findElements(listWithDropDowns);
-        for (int i=0; i < listOfElements.size(); i++){
+    public MainPageFAQ isHiddenElementsDisplayedOnClick() {
+        List<WebElement> listOfElements = webDriver.findElements(listWithDropDowns);
+        for (int i = 0; i < listOfElements.size(); i++) {
             listOfElements.get(i).click();
             boolean isDisplayed = webDriver.findElement(listOfFAQs.get(i)).isDisplayed();
             new WebDriverWait(webDriver, 3)

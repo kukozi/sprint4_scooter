@@ -1,13 +1,12 @@
 package ru.yandex.praktikum;
 
 import org.junit.Test;
-import ru.yandex.praktikum.site_model.MainPageUp;
 import ru.yandex.praktikum.site_model.MainPageFAQ;
-import java.util.concurrent.TimeUnit;
+import ru.yandex.praktikum.site_model.MainPageUp;
 
 public class CheckDropdownsFAQ extends TestMain {
     @Test
-    public void checkMainPage(){
+    public void checkMainPage() {
         new MainPageUp(webDriver)
                 .openMainPage()
                 .closeCookieWindow()

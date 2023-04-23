@@ -26,17 +26,19 @@ public class TrackPage {
             By.xpath("//div[@class = 'Track_OrderInfo__2fpDL']/div[8]/div[2]"),     // delivery duration
             By.xpath("//div[@class = 'Track_OrderInfo__2fpDL']/div[10]/div[2]"),    // color
             By.xpath("//div[@class = 'Track_OrderInfo__2fpDL']/div[11]/div[2]"));    // comment
+
     // Test constructor
-    public TrackPage(WebDriver webDriver){
+    public TrackPage(WebDriver webDriver) {
         this.webDriver = webDriver;
     }
+
     // Test methods
     // Check that Order page has active Order info
-    public void checkOrderIsActive(Boolean isFound){
+    public void checkOrderIsActive(Boolean isFound) {
         // Check whether Not Found message is displayed
         Boolean board = !(webDriver.findElements(notFoundBoard).isEmpty());
         // Check whether Order Info table is displayed
-        Boolean table =  !(webDriver.findElements(orderInfoList).isEmpty());
+        Boolean table = !(webDriver.findElements(orderInfoList).isEmpty());
         Boolean isNotFoundVisible = board && table;
         Assert.assertEquals(isFound, isNotFoundVisible);
     }

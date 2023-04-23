@@ -2,10 +2,12 @@ package ru.yandex.praktikum.site_model;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class OrderContactPage {
+    // "Далее" button
+    private final By nextButton = By.xpath("//div[@class='Order_NextButton__1_rCA']/button");
     // WebDriver init
     private WebDriver webDriver;
     // Web elements
@@ -24,45 +26,47 @@ public class OrderContactPage {
     private By metroStationSelector = By.className("select-search__select/*");
     // Phone number input
     private By phoneNumberInputField = By.xpath("//div[@class='Order_Form__17u6u']/div[5]/input");
-    // "Далее" button
-    private final By nextButton = By.xpath("//div[@class='Order_NextButton__1_rCA']/button");
-    public OrderContactPage(WebDriver webDriver){
+
+    public OrderContactPage(WebDriver webDriver) {
         this.webDriver = webDriver;
     }
+
     // Test methods
-    public OrderContactPage setName(String name){
+    public OrderContactPage setName(String name) {
         webDriver.findElement(nameInputField).sendKeys(name);
         return this;
     }
 
-    public OrderContactPage setSurname(String surname){
+    public OrderContactPage setSurname(String surname) {
         webDriver.findElement(surnameInputField).sendKeys(surname);
         return this;
     }
 
-    public OrderContactPage setAddress(String address){
+    public OrderContactPage setAddress(String address) {
         webDriver.findElement(addressInputField).sendKeys(address);
         return this;
     }
 
-    public OrderContactPage setMetroStation(String metroStation){
+    public OrderContactPage setMetroStation(String metroStation) {
         webDriver.findElement(metroStationField).sendKeys(metroStation);
         webDriver.findElement(metroStationSelector).click();
         return this;
     }
 
-    public OrderContactPage setPhoneNumber(String number){
+    public OrderContactPage setPhoneNumber(String number) {
         webDriver.findElement(phoneNumberInputField).sendKeys(number);
         return this;
     }
-    public OrderContactPage waitForLoadHeader(){
+
+    public OrderContactPage waitForLoadHeader() {
         new WebDriverWait(webDriver, 3)
                 .until(ExpectedConditions.visibilityOfElementLocated(headerAboutRent));
         return this;
     }
+
     // Fill first order section with contact info
     public OrderContactPage fillInOrderContactInfo(String name, String surname,
-                                                   String address, String metroStation, String number){
+                                                   String address, String metroStation, String number) {
         setName(name);
         setSurname(surname);
         setAddress(address);
@@ -70,7 +74,8 @@ public class OrderContactPage {
         setPhoneNumber(number);
         return this;
     }
-    public OrderRentPage clickOnNextButton(){
+
+    public OrderRentPage clickOnNextButton() {
         webDriver.findElement(nextButton).click();
         return new OrderRentPage(webDriver);
     }
