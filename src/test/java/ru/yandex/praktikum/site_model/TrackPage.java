@@ -17,15 +17,18 @@ public class TrackPage {
     private By notFoundBoard = By.className("Track_NotFound__6oaoY");
     // List with order details
     private By orderInfoList = By.className("Track_OrderColumns__2r_1F");
-    private List<By> listOfLocator = Arrays.asList(By.xpath("//div[@class = 'Track_OrderInfo__2fpDL']/div[1]/div[2]"), // name
-            By.xpath("//div[@class = 'Track_OrderInfo__2fpDL']/div[2]/div[2]"),     // surname
-            By.xpath("//div[@class = 'Track_OrderInfo__2fpDL']/div[3]/div[2]"),     // address
-            By.xpath("//div[@class = 'Track_OrderInfo__2fpDL']/div[4]/div[2]"),     // metro station
-            By.xpath("//div[@class = 'Track_OrderInfo__2fpDL']/div[5]/div[2]"),     // phone number
-            By.xpath("//div[@class = 'Track_OrderInfo__2fpDL']/div[7]/div[2]"),     // delivery date
-            By.xpath("//div[@class = 'Track_OrderInfo__2fpDL']/div[8]/div[2]"),     // delivery duration
-            By.xpath("//div[@class = 'Track_OrderInfo__2fpDL']/div[10]/div[2]"),    // color
-            By.xpath("//div[@class = 'Track_OrderInfo__2fpDL']/div[11]/div[2]"));    // comment
+    // A List of Order information entries
+    private List<By> listOfLocator = Arrays.asList(By.xpath(
+            "//div[@class = 'Track_OrderInfo__2fpDL']/div[@class = 'Track_Row__1sN1F']/div[2]"));
+            // [0] name
+            // [1] surname
+            // [2] address
+            // [3] metro station
+            // [4] phone number
+            // [5] delivery date
+            // [6] delivery duration
+            // [7] color
+            // [8] comment
 
     // Test constructor
     public TrackPage(WebDriver webDriver) {
