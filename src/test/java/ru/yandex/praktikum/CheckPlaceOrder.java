@@ -37,7 +37,7 @@ public class CheckPlaceOrder extends TestMain {
         this.comment = comment;
     }
 
-    @Parameterized.Parameters
+    @Parameterized.Parameters (name = "Детали заказа. Тестовые данные: {0} {1} {2}")
     public static Object[][] getUserData() {
         return new Object[][]{
                 {"Горячев", "Михаил", "Сущёвский вал, д.13 1", "Савёловская", "+79999999999",
