@@ -12,9 +12,9 @@ import java.util.List;
 public class MainPageFAQ {
     private final WebDriver webDriver;
     // Dropdowns with FAQ
-    By listWithDropDowns = By.xpath("//div[@class='Home_FAQ__3uVm4']/div/*");
+    private By listWithDropDowns = By.xpath("//div[@class='Home_FAQ__3uVm4']/div/*");
     // List of locators of FAQ dropdowns
-    List<By> listOfFAQs = Arrays.asList(By.id("accordion__panel-0"),
+    private List<By> listOfFAQs = Arrays.asList(By.id("accordion__panel-0"),
             By.id("accordion__panel-1"),
             By.id("accordion__panel-2"),
             By.id("accordion__panel-3"),
