@@ -5,17 +5,11 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/othneildrew/Best-README-Template">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
-  </a>
 
 <h2 align="center">Scooter Auto-Test Project</h2>
 
   <p align="center">
-    An educational project dedicated to a testing of the Scooter Rent test service made by Yandex.
-    <br />
     <a href="https://qa-scooter.praktikum-services.ru"><strong>Visit test website »</strong></a>
-    <br />
     <br />
   </p>
 </div>
@@ -23,9 +17,9 @@
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
+An educational project dedicated to a testing of the Scooter Rent test service made by Yandex.
 
 ## Built With
-This project is made with:
 * Java 11
 * Maven 3.8.1
 * JUnit 4.13.2
@@ -47,7 +41,8 @@ mvn clean install
 
 <!-- CONTACT -->
 ## Contact
-[@kukozi]
+Telegram: [@kukozi](https://t.me/kukozi) 
+</br>
 Project Link: [https://github.com/kukozi/sprint4_scooter](https://github.com/kukozi/sprint4_scooter)
 
 
